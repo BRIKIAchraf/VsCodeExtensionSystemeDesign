@@ -1,7 +1,7 @@
 {
   "name": "systeme-design-helper",
   "displayName": "Systeme-Design-Helper",
-  "description": "Système Design Helper est une extension VS Code qui facilite l'implémentation d'architectures et de patterns de conception modernes. Elle permet de générer automatiquement des projets configurés selon les meilleures pratiques et offre des exemples concrets pour intégrer des patterns tels que Singleton ou Observer",
+  "description": "Système Design Helper est une extension VS Code qui facilite l'implémentation d'architectures et de patterns de conception modernes. Elle permet de générer automatiquement des projets configurés selon les meilleures pratiques et offre des exemples concrets pour intégrer des patterns tels que Singleton ou Observer.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.93.0"
@@ -9,13 +9,22 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:systeme-design-helper.createMicroservices",
+    "onCommand:systeme-design-helper.openDrawingBoard"
+  ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "systeme-design-helper.helloWorld",
-      "title": "Hello World"
-    }]
+    "commands": [
+      {
+        "command": "systeme-design-helper.createMicroservices",
+        "title": "Create Microservices"
+      },
+      {
+        "command": "systeme-design-helper.openDrawingBoard",
+        "title": "Open Drawing Board"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
@@ -29,5 +38,16 @@
     "eslint": "^9.9.1",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5",
+    "jsonwebtoken": "^8.5.1",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.1",
+    "morgan": "^1.10.0",
+    "helmet": "^6.0.1",
+    "pg": "^8.10.0",
+    "supertest": "^6.3.3"
   }
 }
